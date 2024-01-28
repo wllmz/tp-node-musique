@@ -27,6 +27,11 @@ db.once('open', () => {
 });
 
 
+const musicRoute = require("../api/routes/musicRoute");
+musicRoute(server);
+
+const voteRoute = require("../api/routes/voteRoute");
+voteRoute(server);
 
 
 // Démarrer le serveur
