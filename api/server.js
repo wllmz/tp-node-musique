@@ -26,6 +26,15 @@ db.once('open', () => {
     console.log('Connecté avec succès à MongoDB');
 });
 
+server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.json());
+
+
+const userRoute = require("../api/routes/userRoute");
+userRoute(server);
+
+const moduleRoute = require("../api/routes/moduleRoute");
+moduleRoute(server);
 
 
 
