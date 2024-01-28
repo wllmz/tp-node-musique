@@ -36,6 +36,11 @@ userRoute(server);
 const moduleRoute = require("../api/routes/moduleRoute");
 moduleRoute(server);
 
+const musicRoute = require("../api/routes/musicRoute");
+musicRoute(server);
+
+const voteRoute = require("../api/routes/voteRoute");
+voteRoute(server);
 
 
 // Démarrer le serveur
