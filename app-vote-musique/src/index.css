@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+li.list-group-item {
+  margin-bottom: 50px!important;
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #1db954);
+
+  /* Assure que le dégradé couvre toute la page */
+  min-height: 100vh;
+
+  /* Optionnel: rend le dégradé plus fluide */
+  background-size: cover;
+}
+
+.react-tabs__tab--selected {
+  background-color: #fff0;
+}
+

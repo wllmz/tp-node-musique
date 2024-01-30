@@ -6,14 +6,13 @@ exports.createVote = async (req, res) => {
   const musicId = req.params.musicId;
 
   try {
-    // Trouver la musique pour obtenir le module_id
     const music = await Music.findById(musicId);
     if (!music) {
       return res.status(404).json({ message: "Musique non trouvée." });
     }
     const moduleId = music.module_id;
 
-    // Vérifier si l'utilisateur a déjà voté pour une musique dans ce module
+
     const existingVote = await Vote.findOne({
       user_id: userId,
       music_id: { $in: await Music.find({ module_id: moduleId }).distinct('_id') }
@@ -37,7 +36,6 @@ exports.createVote = async (req, res) => {
 };
 
 
-  // Récupérer tous les votes pour une musique
   exports.getAllVotesForMusic = async (req, res) => {
     try {
       const musicId = req.params.musicId;
@@ -48,7 +46,7 @@ exports.createVote = async (req, res) => {
     }
   },
 
-  // Récupérer un vote par ID
+
   exports.getVoteById = async (req, res) => {
     try {
       const vote = await Vote.findById(req.params.voteId);
@@ -59,7 +57,6 @@ exports.createVote = async (req, res) => {
     }
   },
 
-  // Mettre à jour un vote
   exports.updateVote = async (req, res) => {
     try {
       const updatedVote = await Vote.findByIdAndUpdate(req.params.voteId, req.body, { new: true });
@@ -70,7 +67,7 @@ exports.createVote = async (req, res) => {
     }
   },
 
-  // Supprimer un vote
+ 
   exports.deleteVote = async (req, res) => {
     try {
       const deletedVote = await Vote.findByIdAndDelete(req.params.voteId);

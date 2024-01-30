@@ -5,12 +5,12 @@ let voteSchema = new Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'User' // Remplacez 'User' par le nom de votre modèle d'utilisateur
+    ref: 'User' 
   },
   music_id: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'Music' // Remplacez 'Music' par le nom de votre modèle musical
+    ref: 'Music'
   },
   rating: {
     type: Number,

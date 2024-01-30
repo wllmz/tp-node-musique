@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axiosApiInstance from '../services/axiosApi';
 import { useParams } from 'react-router-dom';
 
+
 function ModuleDetails() {
     const [module, setModule] = useState(null);
     const { moduleId } = useParams();
@@ -19,18 +20,25 @@ function ModuleDetails() {
         fetchModule();
     }, [moduleId]);
 
-    // Vérifiez si les données du module sont chargées avant de les afficher
+
     if (!module) {
         return <div>Chargement du module...</div>;
     }
 
     return (
-        <div>
-            <h2>Détails du Module</h2>
-            <p>ID du Module: {module._id}</p> {/* Affichez l'ID du module */}
-            <p>Titre du Module: {module.module}</p> {/* Affichez le titre du module */}
-            {/* Autres détails du module ici */}
+<div class="container">
+    <h2 class="text-center" style={{ marginTop: '50px' }}>Détails du Module</h2>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text"><strong>Titre du Module:</strong> {module.module}</p>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
     );
 }
 
