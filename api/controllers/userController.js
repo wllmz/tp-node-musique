@@ -7,12 +7,12 @@ exports.register = async (req, res) => {
   try {
     const { email, password, role } = req.body;
 
-    // Hachage du mot de passe
+   
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({
       email,
-      password: hashedPassword, // Utilisation du mot de passe haché
+      password: hashedPassword,
       role,
     });
     await newUser.save();
@@ -33,7 +33,7 @@ exports.userLogin = async (req, res) => {
       return;
     }
 
-    // Vérification du mot de passe
+    
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (isMatch) {
@@ -47,7 +47,7 @@ exports.userLogin = async (req, res) => {
         process.env.JWT_KEY,
         { expiresIn: "30 days" }
       );
-      res.status(200).json({token});
+      res.status(200).json({token, id: user._id});
     } else {
       res.status(401).json({ message: "Invalid credentials" });
     }

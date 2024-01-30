@@ -7,6 +7,49 @@ mongoose.connect("mongodb://localhost:27017/tp-music");
 const cors = require('cors');
 
 
+const swaggerUi = require('swagger-ui-express');
+const swaggerJSDoc = require('swagger-jsdoc');
+
+
+const option = {
+    definition: {
+      openapi: "3.0.0",
+      info: {
+        title: "Api Node",
+        version: "1.0.0",
+        description: "A simple API",
+      },
+      servers: [
+        {
+          url: "http://localhost:5000/",
+        },
+      ],
+      components: {
+        securitySchemes: {
+          BearerAuth: { 
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT', 
+          },
+        },
+      },
+      security: [
+        {
+          BearerAuth: [], 
+        },
+      ],
+    },
+    apis: ["../api/routes/*.js"],
+  };
+
+const swaggerSpec = swaggerJSDoc(option);
+
+server.use('/api-test', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
+  
+
+
+
 server.use(cors());
 
 server.use(cors({
@@ -16,12 +59,12 @@ server.use(cors({
 
 const db = mongoose.connection;
 
-// Gestionnaire d'erreurs de connexion
+
 db.on('error', (error) => {
     console.error('Erreur de connexion à MongoDB:', error);
 });
 
-// Confirmation de la connexion réussie
+
 db.once('open', () => {
     console.log('Connecté avec succès à MongoDB');
 });
@@ -43,7 +86,7 @@ const voteRoute = require("../api/routes/voteRoute");
 voteRoute(server);
 
 
-// Démarrer le serveur
+
 server.listen(port, () => {
     console.log(`Serveur démarré sur le port ${port}`);
 });

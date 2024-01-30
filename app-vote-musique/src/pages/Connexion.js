@@ -20,30 +20,45 @@ function Connexion() {
 
 
     return (
-        <div>
-            <h2>Page de Connexion</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Email:</label>
-                    <input 
-                        type="email" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <div>
-                    <label>Mot de passe:</label>
-                    <input 
-                        type="password" 
-                        value={password} 
-                        onChange={(e) => setPassword(e.target.value)} 
-                        required 
-                    />
-                </div>
-                <button type="submit">Connexion</button>
-            </form>
+        <div className="container" style={{ marginTop: '250px' }}>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/168px-Spotify_logo_without_text.svg.png" alt="Logo Spotify" style={{ maxWidth: '100px', margin: '0 auto 20px' }} />
+    </div>
+
+                <h2 class="text-center">Page de Connexion</h2>
+                <form onSubmit={handleSubmit}>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="email" 
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)} 
+                            required 
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe :</label>
+                        <input 
+                            type="password" 
+                            class="form-control" 
+                            id="password" 
+                            value={password} 
+                            onChange={(e) => setPassword(e.target.value)} 
+                            required 
+                        />
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success" style={{ margin: '15px' }} >Connexion</button>
+                    </div>
+                </form>
+            </div>
         </div>
+    </div>
+    
     );
 }
 

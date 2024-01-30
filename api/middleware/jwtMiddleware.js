@@ -7,7 +7,7 @@ exports.verifyToken = async (req, res, next) => {
     try {
         const authHeader = req.headers["authorization"];
         if (authHeader && authHeader.startsWith('Bearer ')) {
-            const token = authHeader.substring(7); // Extrait le token après "Bearer "
+            const token = authHeader.substring(7); 
             
             const payload = await new Promise((resolve, reject) => {
                 jwt.verify(token, jwtkey, (error, decoded) => {

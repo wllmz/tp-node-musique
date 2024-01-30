@@ -13,7 +13,7 @@ exports.listAllMusic = async (req, res) => {
 };
 
 exports.createMusic = async (req, res) => {
-    const userId = req.user.id; // L'ID de l'utilisateur est récupéré du token JWT par le middleware
+    const userId = req.user.id;
     const moduleId = req.params.moduleId;
 
     try {

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axiosApiInstance from '../services/axiosApi'; // Importez votre instance Axios configurée
+import axiosApiInstance from '../services/axiosApi'; 
+import { useNavigate } from 'react-router-dom';
 
 function FutureModules() {
     const [futureModules, setFutureModules] = useState([]);
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         const fetchFutureModules = async () => {
@@ -11,22 +14,36 @@ function FutureModules() {
                 setFutureModules(response.data);
             } catch (error) {
                 console.error("Erreur lors de la récupération des modules futurs:", error);
-                // Gérer l'erreur
+
             }
         };
 
         fetchFutureModules();
     }, []);
 
+    const handleViewDetails = (moduleId) => {
+        navigate(`/modules/${moduleId}`);
+    };
+
+
     return (
-        <div>
-            <h3>Modules Futurs</h3>
-            <ul>
-                {futureModules.map((module) => (
-                    <li key={module._id}>{module.title} - Expiration: {new Date(module.expiration_date).toLocaleDateString()}</li>
-                ))}
-            </ul>
+        <div className="container" style={{ marginTop: '50px' }}>
+        <h3 className="text-center">Modules Futurs</h3>
+        <div className="row">
+            {futureModules.map((module) => (
+                <div className="col-md-4" key={module._id}>
+                    <div className="card mb-4">
+                        <div className="card-body">
+                            <h5 className="card-title">{module.module}</h5>
+                            <p className="card-text">Expiration: {new Date(module.expiration_date).toLocaleString()}</p>
+                            <button className="btn btn-success" onClick={() => handleViewDetails(module._id)}>Voir Détails</button>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
+    </div>
+    
     );
 }
 
