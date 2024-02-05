@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# ReactMusique 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactMusique est une application web dynamique conçue avec React, qui se connecte à MusiqueAPI.
 
-## Available Scripts
+## Caractéristiques
+Découverte de Musique : Explorez de nouveaux titres et genres à travers une interface fluide et réactive.
 
-In the project directory, you can run:
+Interaction Utilisateur : Votez pour vos morceaux préférés et voyez comment vos choix influencent la playlist collective.
 
-### `npm start`
+Contribution de Contenu : Soumettez vos propres trouvailles musicales à la plateforme via l'API MusiqueAPI intégrée.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Responsive Design : Profitez d'une expérience utilisateur cohérente sur tous les appareils, grâce à un design adaptatif.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Démarrage Rapide
 
-### `npm test`
+Suivez ces étapes pour démarrer :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clonez le dépôt :
+```
+git clone https://github.com/wllmz/tp-node-musique.git
+cd app-vote-musique
+```
+Installez les dépendances :
 
-### `npm run build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Démarrez l'application :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+L'application sera alors accessible localement sur http://localhost:3000/.
 
-### `npm run eject`
+## Connexion avec MusiqueAPI
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pour connecter l'application avec MusiqueAPI, assurez-vous que l'API est en cours d'exécution et accessible.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Structure du Projet
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+src/components: Composants React pour les éléments d'interface utilisateur.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+src/services: Services pour communiquer avec MusiqueAPI.
 
-## Learn More
+src/pages: Composants de page qui orchestrent les composants et les services.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+src/assets: Ressources statiques telles que les images et les fichiers de style.
