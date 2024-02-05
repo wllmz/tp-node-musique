@@ -7,7 +7,11 @@ Swagger: Une documentation interactive de l'API accessible via Swagger UI pour f
 
 Tests: Une suite de tests unitaires et d'intégration garantissant la fiabilité et la robustesse du code.
 
-Musique: Des fonctionnalités complètes pour la gestion et l'accès à une vaste collection de musique, y compris la recherche, le filtrage, et la personnalisation.
+Musique: MusiqueAPI propose plusieur fonctionnalité qui sont : 
+
+Proposition de Musique: Les utilisateurs peuvent soumettre de nouveaux morceaux au sein de différents modules thématique.
+
+Votation par Module: Chaque musique est associée à un module spécifique, et les utilisateurs ont la possibilité de voter pour leurs titres préférés au sein de chaque module créer.
 
 ## Installation
 Pour commencer à utiliser MusiqueAPI, clonez le dépôt et installez les dépendances nécessaires en suivant ces étapes :
