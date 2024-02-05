@@ -47,4 +47,4 @@ npm start
 ```
 L'application sera alors accessible localement sur http://localhost:3000/.
 
-Pour plus de détails, consultez le README de [app-vote-musique](https://github.com/wllmz/tp-node-musique/edit/main/app-vote-musique/README.md).
+Pour plus de détails, consultez le README de [app-vote-musique](https://github.com/wllmz/tp-node-musique/tree/main/app-vote-musique).
