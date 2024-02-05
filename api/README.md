@@ -33,8 +33,11 @@ http//localhost:5000/api-docs
 L'API fournit les routes suivantes :
 
 moduleRoute.js: endpoints pour la gestion des modules.
+
 musicRoute.js: endpoints pour parcourir, ajouter, et modifier des entrées musicales.
+
 userRoute.js: endpoints pour la gestion des utilisateurs.
+
 voteRoute.js: endpoints permettant aux utilisateurs de voter pour leurs morceaux préférés.
 
 
